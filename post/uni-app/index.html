@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>uni-app | 周迪的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zhou-di.github.io/favicon.ico?v=1591108779266">
+<link rel="stylesheet" href="https://zhou-di.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="uni-app
+1. 各端小程序加入时间点
+
+2017年，微信发布小程序，掀起小程序大战。
+2018年，阿里、百度、字节跳动、手机厂商等各大巨头纷纷发布自己的小程序。
+2019年，QQ也加入战局，各家全面开花。
+
+说：
+在春节后，各地防疫战..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zhou-di.github.io">
+        <img src="https://zhou-di.github.io/images/avatar.png?v=1591108779266" class="site-logo">
+        <h1 class="site-title">周迪的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://zhou-di.github.io" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://zhou-di.github.io/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://zhou-di.github.io/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://zhou-di.github.io/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      越努力越幸运
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zhou-di.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">uni-app</h2>
+            <div class="post-date">2020-06-02</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="uni-app">uni-app</h1>
+<h1 id="1-各端小程序加入时间点">1. 各端小程序加入时间点</h1>
+<ul>
+<li>2017年，微信发布小程序，掀起小程序大战。</li>
+<li>2018年，阿里、百度、字节跳动、手机厂商等各大巨头纷纷发布自己的小程序。</li>
+<li>2019年，QQ也加入战局，各家全面开花。</li>
+</ul>
+<p>说：<br>
+在春节后，各地防疫战打响，每个城市都开始上线抗疫相关的项目，健康登记、出入管理、口罩预约、实名乘车......引发了一大波新应用热潮。这些小程序仅承载在微信和支付宝的平台上。其他小程序平台没有抓到这拨红利。倒不是因为微信或支付宝的给量能力强，流量来自于政府和商户。而他们之所以选择微信和支付宝平台，完全是因为民众对于扫码的使用习惯依赖。人们看到一个码，不是用微信扫，就是用支付宝扫。其他小程序平台还没有给民众培养出扫码的使用习惯。<br>
+App的一个日活用户远超小程序。虽然小程序的拉新能力甩开App几条街，但深度用户，还是更喜欢用App。</p>
+<h1 id="2-什么是uniapp">2. 什么是uniapp</h1>
+<ul>
+<li>是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、H5、以及各种小程序（微信/支付宝/百度/头条/QQ/钉钉/淘宝）、快应用等多个平台。</li>
+<li>DCloud公司拥有500万开发者用户，几十万应用案例、10亿手机端月活用户，数千款uni-app插件、70+微信/qq群。（重点量很大很全，像一个水桶）</li>
+<li>页面文件 和 数据绑定 遵循 vue规范</li>
+<li>接口能（api）前缀为uni</li>
+<li>为兼容多端运行，建议使用flex布局进行开发</li>
+</ul>
+<h1 id="为什么选择uni-app框架">为什么选择uni-app框架</h1>
+<h1 id="3-多端框架测评在详细介绍uniapp之前先分享一波各端框架测评结果">3. 多端框架测评（在详细介绍uniapp之前先分享一波各端框架测评结果）</h1>
+<ul>
+<li>目前市场主流多端框架为：uni-app 和 taro。</li>
+<li>taro，京东凹凸实验室出品（多端）</li>
+<li>uni-app，DCloud出品（多端）</li>
+<li>kbone，腾讯微信团队出品（微信小程序 和 h5）</li>
+</ul>
+<h2 id="31-跨端支持度如何">3.1 跨端支持度如何</h2>
+<h2 id="32-跨端框架性能如何">3.2 跨端框架性能如何</h2>
+<h2 id="33-点赞组件响应速度">3.3 点赞组件响应速度</h2>
+<h2 id="34-微信小程序-转-uniapp">3.4 微信小程序  转 uniapp</h2>
+<h1 id="结合学园小程序踩过的坑看uni-app支持度如何重点">结合学园小程序踩过的坑，看uni-app支持度如何（重点）</h1>
+<ul>
+<li>getCurrentPage() 快速刷新列表页</li>
+<li>同层渲染问题</li>
+<li>自定义组件</li>
+<li>特殊的小程序api 兼容性</li>
+<li>canvans</li>
+<li>wxs</li>
+</ul>
+<h1 id="总结">总结</h1>
+<ul>
+<li>产品经理对细节不高</li>
+<li>一个简单的项目，那么可以尝试，功能复杂的话就不太适合了，特别是对性能和兼容，以及适配上面需要有要求的时候，就需要特别注意了。</li>
+</ul>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zhou-di.github.io/post/mei-you-gan-qing-de-coder/">
+                  <h3 class="post-title">
+                    😀没有感情的coder
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
