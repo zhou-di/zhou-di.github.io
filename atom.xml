@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhou-di.github.io</id>
     <title>周迪的小站</title>
-    <updated>2020-06-02T14:58:01.393Z</updated>
+    <updated>2020-06-04T14:49:22.127Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhou-di.github.io"/>
     <link rel="self" href="https://zhou-di.github.io/atom.xml"/>
@@ -50,17 +50,46 @@ App的一个日活用户远超小程序。虽然小程序的拉新能力甩开Ap
 <li>目前市场主流多端框架为：uni-app 和 taro。</li>
 <li>性能</li>
 </ul>
-<h1 id="3-结合学园小程序踩过的坑看uni-app支持度如何重点">3. 结合学园小程序踩过的坑，看uni-app支持度如何（重点）</h1>
+<h1 id="3-结合真实案例来看uni-app在一些细节方面处理的怎样重点">3. 结合真实案例，来看uni-app在一些细节方面处理的怎样（重点）</h1>
 <ul>
-<li>getCurrentPage() 快速刷新列表页</li>
-<li>同层渲染问题</li>
+<li>getCurrentPage() 快速刷新列表页
+<ul>
+<li>总结：尝试，通过 getCurrentPage() 设置上一个页面的数据。h5成功，小程序失败，app失败。查文档 getCurrentPages()[0].$vm，这样才可以</li>
+<li>场景举例：
+<ul>
+<li>列表页进入详情页，然后回退</li>
+<li>某操作页A需要在下一页面B选择，选择后需要退回到A页面（A页面还要知道选择了什么）</li>
+<li>在任意页面进入到登录页面，登录或者注册成功后返回到原页面，并且要保证继续回退是不会到登陆页面的</li>
+<li>支持浏览器的back和forward(微信或者小程序很有用)</li>
+<li>在进入、退出或者某些特殊页面的时候添加一些动画，比如模仿ios的默认动画（进入是页面从右向左平移，退出是页面从左向右平移）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>同层渲染问题
+<ul>
+<li>总结：常规方法，小程序：原生组件层级最高，app 和 h5 正常，解决：如果有同层渲染的问题还是的单独处理 cover-view</li>
+</ul>
+</li>
 <li>自定义组件</li>
-<li>特殊的小程序api 兼容性</li>
-<li>canvans</li>
+<li>特殊的小程序api 兼容性
+<ul>
+<li>总结：wx.login</li>
+<li>总结：api 主：小程序，从：app、h5。开发思维还是从小程序为起点</li>
+</ul>
+</li>
 <li>wxs</li>
 <li>层级问题：原生永远在最高层，无法通过z-index设置不同元素的层级，无法与 view、image 等内置组件相互覆盖，不支持在picker-view、scroll-view、swiper等组件中使用</li>
-<li>通讯问题：比如一个长列表中内嵌视频组件，页面滚动时，需通知原生的视频组件一起滚动，通讯阻塞，可能导致组件抖动或拖影</li>
-<li>字体问题：在Android手机上，调整系统主题字体，所有原生渲染的控件的字体都会变化，而web渲染的字体则不会变化。如下图，系统rom字体为一款“你的名字”的三方字体，设置后，小程序顶部标题字体变了，底部选项卡字体也变了，但小程序中间内容区字体不变，这就是比较尴尬的一种情况，一个页面，两种字体。</li>
+<li>通讯问题：比如一个长列表中内嵌视频组件，页面滚动时，需通知原生的视频组件一起滚动，通讯阻塞，可能导致组件抖动或拖影
+<ul>
+<li>出处：https://zhuanlan.zhihu.com/p/102514453</li>
+</ul>
+</li>
+<li>字体问题：在Android手机上，调整系统主题字体，所有原生渲染的控件的字体都会变化，而web渲染的字体则不会变化。如下图，系统rom字体为一款“你的名字”的三方字体，设置后，小程序顶部标题字体变了，底部选项卡字体也变了，但小程序中间内容区字体不变，这就是比较尴尬的一种情况，一个页面，两种字体。
+<ul>
+<li>出处：https://zhuanlan.zhihu.com/p/102514453</li>
+</ul>
+</li>
 </ul>
 <h1 id="4-多端框架的未来">4. 多端框架的未来</h1>
 <ul>
@@ -78,6 +107,8 @@ App的一个日活用户远超小程序。虽然小程序的拉新能力甩开Ap
 <p>https://zhuanlan.zhihu.com/p/127915625<br>
 https://zhuanlan.zhihu.com/p/130332829</p>
 <h1 id="重点-httpszhuanlanzhihucomp102514453">重点 https://zhuanlan.zhihu.com/p/102514453</h1>
+<h1 id="重点-httpsvqqcomxpager0886mn8v6lhtml">重点 https://v.qq.com/x/page/r0886mn8v6l.html</h1>
+<p>h5页面路径堆栈：https://blog.csdn.net/weixin_34021089/article/details/91418406</p>
 ]]></content>
     </entry>
     <entry>
